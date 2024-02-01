@@ -5,8 +5,8 @@ import numpy as np
 from einops import rearrange, repeat
 from einops.layers.torch import Rearrange
 
-import lightning.pytorch as pl
-
+#import lightning.pytorch as pl
+import pytorch_lightning as pl #for google colab
 
 def pair(t):
     return t if isinstance(t, tuple) else (t, t)
