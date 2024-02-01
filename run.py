@@ -6,7 +6,7 @@ import torch.optim as optim
 import lightning.pytorch as pl
 from lightning.pytorch.loggers import WandbLogger
 
-import datasets
+#import datasets
 
 from models.vit import ViT, MViT, resize_positional_embedding_
 from models.vision_transformers import VisionTransformers
@@ -187,18 +187,18 @@ def setup_model(
     return model
 
 
-def create_dataset(dataset, mult, imgsize, train_batch_size, eval_batch_size):
-    if dataset == "dfc":
-        data_module = datasets.dfc.DFCDataModule()
-        data_module.setup(mult, train_batch_size, eval_batch_size)
-    elif dataset == "cityscapes":
-        data_module = datasets.cityscapes.CityscapesDataModule()
-        data_module.setup(mult, imgsize, train_batch_size, eval_batch_size)
-    else:
-        print("The dataset doesn't exist.")
-        return
+# def create_dataset(dataset, mult, imgsize, train_batch_size, eval_batch_size):
+#     if dataset == "dfc":
+#         data_module = datasets.dfc.DFCDataModule()
+#         data_module.setup(mult, train_batch_size, eval_batch_size)
+#     elif dataset == "cityscapes":
+#         data_module = datasets.cityscapes.CityscapesDataModule()
+#         data_module.setup(mult, imgsize, train_batch_size, eval_batch_size)
+#     else:
+#         print("The dataset doesn't exist.")
+#         return
 
-    return data_module
+#     return data_module
 
 
 def setup_criterion_optimizer_scheduler(
