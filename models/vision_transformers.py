@@ -1,4 +1,5 @@
-import lightning.pytorch as pl
+#import lightning.pytorch as pl
+import pytorch_lightning as pl #for google colab
 import torch
 
 
